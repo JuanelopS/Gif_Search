@@ -6,11 +6,11 @@ import { GifItem } from './GifItem';
 /* cada vez que React detecta un cambio en un componente lo vuelve a ejecutar para redibujarlo:
    por ello aparecen dos console.log (ejecuta dos veces este componente) React.StrictMode */
 
-export const GifGrid = ({ category }) => {
+export const GifGrid = ({ category, page }) => {
    
     // custom hook
     
-    const { images, isLoading } = useFetchGifs( category );
+    const { images, isLoading } = useFetchGifs( category, page );
 
     // console.log({ isLoading });
 
@@ -35,7 +35,7 @@ export const GifGrid = ({ category }) => {
 
     return (
     <>
-        <h3>{ category }</h3>
+        <h3 className='category'>{ category }</h3>
         {
             // if corto de una sola condición (No necesario un ternario con null)
             isLoading && ( <h2>Cargando...</h2> )

@@ -19,8 +19,8 @@ export const AddCategory = ({ onNewCategory }) => {
     const onSubmit = ( event ) => {
         // preventDefault() evita el refresh del navegador al hacer submit
         event.preventDefault();
-        // evitar inputs de 1 caracter o menos
-        if( inputValue.trim().length <= 1 ) return;
+        // evitar inputs de 3 caracteres o menos
+        if( inputValue.trim().length <= 3 ) return;
 
         // actualizamos categories añadiendo inputValue al inicio de la lista
         // setCategories( categories => [ inputValue, ...categories ]);
